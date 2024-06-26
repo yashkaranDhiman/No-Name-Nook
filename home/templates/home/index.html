@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    {% load static %}
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>NoNameNook</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <main>
+        <div id="page1">
+            <div id="add-room-model">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <h2>Room name</h2>
+                    <input type="text" name="title" id="title">
+                    <h2>description</h2>
+                    <textarea name="desc" id="desc" cols="50" rows="10"></textarea><br>
+                    <button type="submit">create</button>
+                    <button id="close">X</button>
+                </form>
+            </div>
+            {% if user.is_staff %}
+            <button id="add-room">add room</button>
+            {% endif %}
+            <div id="welcome-model">
+                <h2>WELCOME</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id nisi ea eligendi tenetur deleniti nemo impedit esse repellat eveniet! Sapiente quibusdam ducimus veritatis soluta dolorum eos, ratione quod laudantium obcaecati culpa corporis est quas dicta ab aspernatur mollitia enim quidem magnam error provident et natus. Laudantium natus commodi laboriosam ipsa</p>
+                <button id="continue-btn">Continue</button>
+            </div>
+            <div id="Leaderboard">
+                <h2>Leaderboard</h2>
+                <hr>
+                <div id="rooms-container">
+                    {% for room in allRooms %}
+                    <a class="room" href="{% url 'roompage' room.id %}" >{{room.title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+

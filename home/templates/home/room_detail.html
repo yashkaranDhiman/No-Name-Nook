@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    {% load static %}
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>HTML</title>
+    <link rel="stylesheet" href='{% static "room.css" %}'>
+</head>
+<body>
+    <div id="page1">
+        <div id="room-top">
+            <h1 id="room">{{the_room.id}}</h1>
+            <h2 id="room_name">{{the_room.title}}</h2>
+            <p id="room_desc">({{the_room.description}})</p>
+        </div>
+        <div id="messages">
+            {% for mssg in all_messages %}
+            <div class="message">
+                <h2>{{mssg.content}}</h2>
+                <h5>{{mssg.time|timesince }}</h5>  
+            </div>
+            {% endfor %}
+        </div>
+    <form id="inpform" action="" method="post">
+        {% csrf_token %}
+        <div id="divs">
+            <input type="text" placeholder="Write message here" name="text" id="text" required>
+            <button type="submit" id="postbutton">Send</button>
+        </div>
+    </form>
+</div>
+    <script src="{% static 'room.js' %}"></script>
+    
+</body>
+</html>

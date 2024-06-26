@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+body{
+    overflow-x: hidden;
+}
+#page1{
+    width: 100vw;
+    background-color: #dadada;
+    height: 100vh;
+    position: relative;
+}
+#welcome-model{
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 60%;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    background-color: white;
+    flex-direction: column;
+    transition: all .5s ease-in-out;
+    border: 1px solid black;
+    padding: 5vw;
+    scale: 0;
+}
+#welcome-model h2{
+    font-size: 4vw;
+}
+#welcome-model p{
+    font-size: 1.2vw;
+}
+#continue-btn{
+    background-color: #5eb1ff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.4vw;
+    margin: 0 auto;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#Leaderboard{
+    width: 60%;
+    height: 60%;
+    padding: 1vw 2vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border: 1px solid black;
+}
+#Leaderboard h2{
+    font-size: 2vw;
+    font-weight: 300;
+}
+#rooms-container {
+    display: flex;
+    flex-direction: row; /* Use row direction for wrapping */
+    flex-wrap: wrap; /* Enable wrapping */
+    height: 90%;
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+.room{
+    flex: 1 1 200px; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 200px */
+    margin: 5px; /* Adjust margin as needed */
+    box-sizing: border-box; 
+    font-weight: 500;
+    font-size: 1.4vw;
+    cursor: pointer;
+}
+#add-room{
+    font-size: 1.2vw;
+    bottom: 0;
+    right: 0;
+    padding: 8px 12px;
+    background-color: #5eb1ff;
+    border-radius: 5px;
+    position: absolute;
+}
+a{
+    color: rgb(61, 61, 255);
+    text-decoration: underline;
+}
+#add-room-model{
+    width: 70%;
+    padding: 2vw;
+    height: 70%;
+    position: absolute;
+    border: 1px solid black;
+    background-color: #dadada;
+    top: 50%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    z-index: 99;
+}
+#close{
+    font-size: 2vw;
+    background-color: green;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    top: -2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    right: -2%;
+    border-radius: 50%;
+}
+@media (max-width: 768px) {
+    #Leaderboard{
+        width: 80%;
+        height: 80%;
+    }
+    #Leaderboard h2{
+        font-size: 5vw;
+    }
+
+}
