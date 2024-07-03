@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+setInterval(receiveMessages,200)
+
+function receiveMessages() {
     let inpform = document.getElementById("inpform");
 
     inpform.addEventListener("submit", (event) => {
@@ -41,4 +43,4 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error:", err);
         });
     });
-});
+}
